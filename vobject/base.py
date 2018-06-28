@@ -498,6 +498,9 @@ class Component(VBase):
         self.name = copyit.name
         self.useBegin = copyit.useBegin
 
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
     def setProfile(self, name):
         """
         Assign a PROFILE to this unnamed component.
